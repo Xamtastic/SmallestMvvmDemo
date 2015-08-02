@@ -1,6 +1,9 @@
 # SmallestMvvmDemo
 Hello SmallestMvvm demonstration of SmallestMvvm available at Nuget at https://www.nuget.org/packages/Com.Xamtastic.Patterns.SmallestMvvm
 
+The code for the Nuget Package is as at the following link and may be compiled instead of using the Nuget package:
+https://github.com/Xamtastic/SmallestMvvm
+
 ViewModel injection is achieved via a page class decoration, where the page implements PageBase, which itself implements ContentPage:
 
 ```
@@ -113,3 +116,65 @@ This allows it to be detected, instantiated, and bound, in the PageBase, which i
 ```
 
 Veterans will realise that for an absolutely minimal solution, the View Model could have implemented the PropertyChangedBase, however for scalability the ViewModelBase caters for Page Navigation Parameters, hence a ViewModelBase is utilised to allow for an INavigationManager to be injected, cf PageBase and ViewModelBase, however it is intended that an Implementation of INavigationManager will be made available in another Nuget package so that this remains the smallest but scalable MVVM framework.
+
+However the ViewModelBase is implemented in the Nuget package as follows (two classes):
+
+```
+namespace Com.Xamtastic.Patterns.SmallestMvvm
+{
+    public abstract class ViewModelBase<TNavigationParameter> : ViewModelBase
+    {
+        public new TNavigationParameter NavigationParameter
+        {
+            get { return (TNavigationParameter)base.NavigationParameter; }
+        }
+    }
+
+    public class ViewModelBase : PropertyChangedBase, IDisposable
+    {
+        private INavigationManager _navigationManager;
+        public INavigationManager NavigationManager
+        {
+            get { return _navigationManager; }
+            set { _navigationManager = value; }
+        }
+
+        #region IDisposable members
+        public void Dispose()
+        {
+
+        }
+        #endregion
+
+        public ViewModelBase()
+        {
+
+        }
+
+        public virtual Task Initialize()
+        {
+            return Task.FromResult(true);
+        }
+
+        public virtual Task Initialize(object navigationParameter)
+        {
+            NavigationParameter = navigationParameter;
+            return Initialize();
+        }
+
+        public object NavigationParameter { get; private set; }
+
+        public bool IsInitialized { get; set; }
+
+        public virtual void OnAppear()
+        {
+
+        }
+
+
+    }
+}
+```
+
+The code for the Nuget Package is as at the following link:
+https://github.com/Xamtastic/SmallestMvvm
