@@ -1,6 +1,9 @@
 # SmallestMvvmDemo
 Hello SmallestMvvm demonstration of SmallestMvvm available at Nuget at https://www.nuget.org/packages/Com.Xamtastic.Patterns.SmallestMvvm
 
+And I've blogged it here:
+http://xamtastic.com/?page_id=1581
+
 The code for the Nuget Package is at the following link and may be compiled instead of using the Nuget package:
 https://github.com/Xamtastic/SmallestMvvm
 
