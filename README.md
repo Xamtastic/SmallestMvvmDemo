@@ -1,7 +1,7 @@
 # SmallestMvvmDemo
 Hello SmallestMvvm demonstration of SmallestMvvm available at Nuget at https://www.nuget.org/packages/Com.Xamtastic.Patterns.SmallestMvvm
 
-The code for the Nuget Package is as at the following link and may be compiled instead of using the Nuget package:
+The code for the Nuget Package is at the following link and may be compiled instead of using the Nuget package:
 https://github.com/Xamtastic/SmallestMvvm
 
 ViewModel injection is achieved via a page class decoration, where the page implements PageBase, which itself implements ContentPage:
@@ -176,5 +176,5 @@ namespace Com.Xamtastic.Patterns.SmallestMvvm
 }
 ```
 
-The code for the Nuget Package is as at the following link:
+The code for the Nuget Package is at the following link:
 https://github.com/Xamtastic/SmallestMvvm
