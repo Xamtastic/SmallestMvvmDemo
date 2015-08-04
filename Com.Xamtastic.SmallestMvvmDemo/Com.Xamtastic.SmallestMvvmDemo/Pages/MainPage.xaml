@@ -3,5 +3,13 @@
              xmlns:mvvm="clr-namespace:Com.Xamtastic.Patterns.SmallestMvvm;assembly=Com.Xamtastic.Patterns.SmallestMvvm"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Com.Xamtastic.SmallestMvvmDemo.Pages.MainPage">
-  <Label Text="{Binding Message}" VerticalOptions="Center" HorizontalOptions="Center" />
+  <mvvm:PageBase.Padding>
+    <OnPlatform x:TypeArguments="Thickness">
+      <OnPlatform.iOS>0,20,0,0</OnPlatform.iOS>
+    </OnPlatform>
+  </mvvm:PageBase.Padding>
+  <StackLayout>
+    <Label Text="{Binding Message}" HorizontalOptions="Center" />
+    <Button Text="Navigate" Command="{Binding NavigateToPage}" HorizontalOptions="Center" />
+  </StackLayout>
 </mvvm:PageBase>

@@ -1,4 +1,5 @@
-﻿using Com.Xamtastic.SmallestMvvmDemo.Pages;
+﻿using Autofac;
+using Com.Xamtastic.SmallestMvvmDemo.Pages;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,7 +13,9 @@ namespace Com.Xamtastic.SmallestMvvmDemo
         public App()
         {
             // The root page of your application
-            MainPage = new MainPage();
+            var startupPage = new MainPage();
+            NavigationPage.SetHasNavigationBar(startupPage, false);
+            MainPage = new NavigationPage(startupPage);
         }
 
         protected override void OnStart()

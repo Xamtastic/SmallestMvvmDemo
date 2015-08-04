@@ -9,13 +9,12 @@ using Xamarin.Forms;
 
 namespace Com.Xamtastic.SmallestMvvmDemo.Pages
 {
-    [ViewModelType(typeof(MainPageViewModel))]
-    public partial class MainPage : PageBase
+    [ViewModelType(typeof(SecondPageViewModel))]
+    public partial class SecondPage : PageBase
     {
-        public MainPage()
+        public SecondPage()
         {
             InitializeComponent();
-            ((MainPageViewModel)this.BindingContext).Navigation = this.Navigation;
         }
     }
 }
