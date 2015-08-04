@@ -7,6 +7,10 @@ http://xamtastic.com/?page_id=1581
 The code for the Nuget Package is at the following link and may be compiled instead of using the Nuget package:
 https://github.com/Xamtastic/SmallestMvvm
 
+Please note that different levels of example are visible on different branches:
+- Master - minimal solution without page navigation.
+- Navigation_Minimal - minimal navigation passing the page's Navigation object into the view model from the page's code behind.
+
 ViewModel injection is achieved via a page class decoration, where the page implements PageBase, which itself implements ContentPage:
 
 ```
