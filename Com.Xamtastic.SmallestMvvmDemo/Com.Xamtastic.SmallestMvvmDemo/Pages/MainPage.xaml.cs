@@ -15,6 +15,8 @@ namespace Com.Xamtastic.SmallestMvvmDemo.Pages
         public MainPage()
         {
             InitializeComponent();
+
+            // Notes: this is the minimal way of getting the Navigation into the ViewModel.
             ((MainPageViewModel)this.BindingContext).Navigation = this.Navigation;
         }
     }
